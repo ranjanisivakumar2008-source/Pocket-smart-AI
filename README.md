@@ -1,123 +1,213 @@
-POCKETSMART AI
-Your Smart Budget & Recommendation Assistant
-PocketSmart AI is a Generative AI-powered budget planning and recommendation platform. It helps users create personalized, budget-aware plans for home interiors, party planning, and jewelry selection.
+**PocketSmart AI**
+**Your Smart Budget & Recommendation Assistant**
 
-The system uses FastAPI with Google Gemini 1.5 Flash Pro to understand user budgets, preferences, contextual requirements, and optional images, then generates relevant recommendations.
+PocketSmart AI is a Generative AI-powered budget planning and recommendation platform designed to help users make smarter decisions within their budget.
 
-FEATURES
-1. Home Interior Budget Planner
-Enter budget, room types, quantities, and preferences.
+The platform provides personalized recommendations for:
 
-Get recommendations for furniture, lighting, decor, fans, dining tables, and more.
+Home Interior Planning
 
-Generate budget-aware interior planning suggestions.
+Party and Event Planning
 
-2. Party Budget Planner
-Enter event type, budget, guest count, and venue details.
+Jewelry Selection
 
-Get suggestions for:
+It uses FastAPI as the backend and Google Gemini AI to understand user requirements, budgets, preferences, contextual information, and optional images to generate personalized recommendations.
 
-Food
+Features
+Home Interior Budget Planner
 
-Decoration
+Plan your home interiors according to your budget and preferences.
 
-Venues
+Features
 
-Accommodation
+Enter your total budget
 
-Generate personalized party planning recommendations.
+Select room types
 
-3. Jewelry Budget Planner
-Enter budget, occasion, and style preferences.
+Specify quantities
 
-Optionally upload an outfit image.
+Add personal preferences
 
-Analyze outfit color and style coordination.
+Get furniture recommendations
 
-Receive occasion- and outfit-matched jewelry suggestions.
+Get lighting recommendations
 
-4. User Authentication
-User registration and login functionality.
+Get decor recommendations
 
-JWT-based authentication.
+Get fan and dining table suggestions
 
-Session management.
+Generate budget-aware interior plans
 
-Secure user access to personalized features.
+Party Budget Planner
 
-5. Personalized Dashboard
-View recent recommendations.
+Plan parties and events while considering your available budget.
 
-View saved queries.
+Features
 
-Access personalized planning information from one dashboard.
+Select event type
 
-6. Recommendation History
-Review previous recommendation requests.
+Enter total budget
 
-View previously generated results.
+Enter guest count
 
-Maintain a history of user planning activities.
+Provide venue details
 
-7. Generative AI Recommendations
-Gemini processes:
+Get food recommendations
 
-Text inputs
+Get decoration suggestions
+
+Get venue suggestions
+
+Get accommodation suggestions
+
+Generate personalized event plans
+
+Supported Event Examples
+
+Birthday Parties
+
+Corporate Events
+
+Weddings
+
+Family Functions
+
+Private Events
+
+Jewelry Budget Planner
+
+Find jewelry recommendations based on your occasion, budget, style, and outfit.
+
+Features
+
+Enter jewelry budget
+
+Select occasion
+
+Select preferred style
+
+Upload outfit image
+
+Analyze outfit colors
+
+Match jewelry with outfit style
+
+Generate personalized jewelry suggestions
+
+Generative AI
+
+PocketSmart AI uses Google Gemini to generate contextual recommendations.
+
+The AI can process:
+
+User requirements
 
 Budget information
 
-User preferences
+Preferences
 
-Contextual requirements
+Event details
 
-Optional images
+Room details
 
-The AI then generates context-aware and personalized recommendations.
+Occasion information
 
-HOW IT WORKS
-User selects a planner
+Optional outfit images
 
-Home
+The system then generates recommendations based on the information provided by the user.
 
-Party
+User Authentication
 
-Jewelry
+PocketSmart AI includes user authentication and session management.
 
-User enters budget and preferences.
+Features
 
-Optional image input can be provided for the Jewelry Planner.
+User Registration
 
-FastAPI receives and validates the request.
+User Login
 
-Gemini 1.5 Flash Pro processes the information.
+Logout
 
-Personalized recommendations are generated.
+JWT Authentication
 
-Recommendations are displayed through the responsive web interface.
+Session Management
 
-Previous queries and results can be maintained through session and history features.
+Protected User Data
 
-TECH STACK
+Personalized Dashboard
+
+Users can access a personalized dashboard containing:
+
+Recent recommendations
+
+Saved queries
+
+Previous planning requests
+
+Recommendation details
+
+User-specific information
+
+Recommendation History
+
+Users can review their previous AI-generated recommendations.
+
+The history system allows users to:
+
+View previous requests
+
+Review generated recommendations
+
+Access saved planning information
+
+Track previous budgeting decisions
+
+How It Works
+                    User
+                      |
+                      v
+              Select Planner
+       Home / Party / Jewelry
+                      |
+                      v
+             Enter Budget &
+               Preferences
+                      |
+                      v
+                FastAPI
+           Request Validation
+                      |
+                      v
+             Google Gemini
+             Generative AI
+                      |
+                      v
+        Personalized Recommendations
+                      |
+                      v
+              Web Interface
+
+Tech Stack
 Technology	Purpose
 Python	Core programming language
 FastAPI	Backend API framework
-Google Gemini 1.5 Flash Pro	Generative AI and multimodal recommendations
-HTML	Frontend structure
-CSS	Styling and responsive design
+Google Gemini	Generative AI recommendations
+HTML5	Frontend structure
+CSS3	Styling and responsive design
 JavaScript	Frontend interactions
 Jinja2	Dynamic HTML templates
 JWT	Authentication
-Uvicorn	FastAPI server
+Uvicorn	ASGI server
 CORS	Cross-origin communication
-Third-party APIs	Product and service sourcing
-
-PROJECT STRUCTURE
+Third-Party APIs	Product and service sourcing
+Project Structure
 PocketSmart-AI/
 │
 ├── main.py
 ├── gemini_utils.py
 ├── requirements.txt
 ├── .env
+├── .gitignore
 │
 ├── routes/
 │   ├── home.py
@@ -144,72 +234,166 @@ PocketSmart-AI/
     ├── js/
     └── images/
 
-Note: The exact folder and file structure may vary depending on the implementation.
 
-MAIN API ROUTES
+The exact project structure may vary depending on the implementation.
+
+API Endpoints
 Planner Routes
+Home Planner
 POST /generate-home
+
+Party Planner
 POST /generate-party
+
+Jewelry Planner
 POST /generate-jewelry
 
 Authentication Routes
-/register
-/login
-/logout
-/token
+POST /register
+POST /login
+POST /logout
+POST /token
 
-Session & History Routes
-/session-info
-/session-data
-/history
-/recommendations-details
-/startup
+Session and History Routes
+GET /session-info
+GET /session-data
+GET /history
+GET /recommendations-details
+GET /startup
 
-INSTALLATION & SETUP
+Installation
 1. Clone the Repository
 git clone https://github.com/your-username/PocketSmart-AI.git
 cd PocketSmart-AI
 
 2. Create a Virtual Environment
-python -m venv venv
-
 Windows
+python -m venv venv
 venv\Scripts\activate
 
 Linux / macOS
+python3 -m venv venv
 source venv/bin/activate
 
 3. Install Dependencies
 pip install -r requirements.txt
 
-4. Configure Environment Variables
-Create a .env file:
+Environment Variables
+
+Create a .env file in the root directory.
 
 GEMINI_API_KEY=your_gemini_api_key
 
-Never upload your real API key or .env file to GitHub.
 
-5. Run the Application
-uvicorn main:app --reload
+Do not commit your actual API key to GitHub.
 
-The application can then be accessed through the local server shown by Uvicorn.
+Add the following entries to .gitignore:
 
-GEMINI API SETUP
-PocketSmart AI requires access to the Gemini API.
+.env
+venv/
+__pycache__/
+*.pyc
 
-General Setup
-Create or configure your Google Cloud or supported Gemini API environment.
+Gemini API Configuration
+
+PocketSmart AI requires a Gemini API key to generate AI-powered recommendations.
+
+General setup:
+
+Create or configure your Gemini API environment.
 
 Generate an API key.
 
-Store the API key securely in an environment variable.
+Store the API key in the .env file.
 
 Configure the application to use the required Gemini model.
 
-Test both text-based and optional image-based requests.
+Test both text-based and image-based requests.
 
-RECOMMENDATION SOURCES
-The project is designed to work with or reference popular platforms such as:
+Run the Application
+
+Start the FastAPI development server:
+
+uvicorn main:app --reload
+
+
+The application will be available through the local URL displayed by Uvicorn.
+
+FastAPI's interactive API documentation can typically be accessed at:
+
+http://127.0.0.1:8000/docs
+
+Testing
+
+PocketSmart AI can be tested using different real-world scenarios.
+
+Home Interior Testing
+
+Test with:
+
+Different budgets
+
+Different room types
+
+Different furniture requirements
+
+Different decor preferences
+
+Different quantities
+
+Party Planning Testing
+
+Test with:
+
+Birthday events
+
+Corporate events
+
+Weddings
+
+Different guest counts
+
+Different budgets
+
+Different venue requirements
+
+Jewelry Testing
+
+Test with:
+
+Different occasions
+
+Different budgets
+
+Different jewelry styles
+
+Different outfit colors
+
+Different outfit images
+
+Testing Focus
+
+The application should be tested for:
+
+Recommendation quality
+
+Budget adherence
+
+Input validation
+
+API reliability
+
+Authentication
+
+Session management
+
+Image handling
+
+AI response handling
+
+Recommendation Sources
+
+Depending on the implementation, recommendations may reference popular platforms such as:
 
 Amazon
 
@@ -223,76 +407,35 @@ Zomato
 
 OYO
 
-Note: Product/service availability and pricing depend on the connected implementation and external platform data.
+Product prices, availability, links, and services depend on the external platforms and integrations used by the implementation.
 
-TESTING
-The project can be tested using different real-world scenarios.
+Security
 
-Home Interior
-Different budgets
+PocketSmart AI follows basic security practices such as:
 
-Different room types
+API keys stored in environment variables
 
-Furniture requirements
-
-Decor requirements
-
-Lighting requirements
-
-Party Planning
-Birthday events
-
-Corporate events
-
-Weddings
-
-Different guest counts
-
-Different budgets
-
-Different venue requirements
-
-Jewelry Planning
-Different occasions
-
-Different style preferences
-
-Different budgets
-
-Outfit image inputs
-
-Color and style matching
-
-Testing Focus
-Recommendation quality
-
-Budget adherence
+JWT-based authentication
 
 Input validation
 
-AI response reliability
+Protected user sessions
 
-API behavior
+CORS configuration
 
-Image processing
+.env excluded from version control
 
-SECURITY NOTES
-Keep API keys inside environment variables.
+For production deployment, additional security controls should be implemented according to the deployment environment.
 
-Do not commit .env files to GitHub.
+Future Enhancements
 
-Use secure authentication and JWT handling.
+Real-time product price tracking
 
-Validate user inputs before sending them to AI services.
+Real-time product availability
 
-Configure CORS according to the deployment environment.
+Integration with additional shopping platforms
 
-Protect user history and personalized recommendation data.
-
-FUTURE ENHANCEMENTS
-Real-time product price and availability tracking
-
-Integration with more shopping and service platforms
+Integration with additional food and event platforms
 
 Advanced budget optimization
 
@@ -304,31 +447,77 @@ User preference learning
 
 Saved budget templates
 
-More AI-powered planning categories
+More interior planning options
 
-Advanced image-based recommendations
+More event planning categories
 
-USE CASES
-PocketSmart AI can help users:
+Advanced outfit and jewelry image analysis
 
-Plan home interiors within a fixed budget.
+Use Cases
+Home Planning
 
-Organize parties and events.
+Plan furniture, lighting, decor, and other home requirements within a predefined budget.
 
-Find jewelry matching an outfit and occasion.
+Event Planning
 
-Compare recommendations across multiple categories.
+Create personalized event plans based on event type, guest count, venue, and budget.
 
-Save time while making budget-conscious decisions.
+Jewelry Selection
 
-Get personalized AI-powered planning suggestions.
+Find jewelry suggestions based on occasion, budget, personal style, and outfit.
 
-PROJECT GOAL
-The goal of PocketSmart AI is to make everyday budgeting and planning simple, personalized, and AI-powered by combining Generative AI with modern web technologies.
+Budget Management
 
-PROJECT
-PocketSmart AI — Your Smart Budget & Recommendation Assistant
-Built With
-FastAPI + Google Gemini 1.5 Flash Pro + HTML + CSS + JavaScript
+Make planning decisions while keeping the user's specified budget in consideration.
+
+Project Goal
+
+The main goal of PocketSmart AI is to make everyday planning and budgeting simple, personalized, and AI-powered.
+
+By combining Generative AI, FastAPI, and modern web technologies, PocketSmart AI provides users with contextual recommendations while considering their budget and preferences.
+
+Why PocketSmart AI?
+
+Traditional planning often requires users to search through multiple websites and manually compare different options.
+
+PocketSmart AI simplifies this process by allowing users to provide:
+
+Budget + Preferences + Requirements
 
 
+and receive:
+
+AI-Powered Personalized Recommendations
+
+
+through a single platform.
+
+Development
+
+PocketSmart AI is built using:
+
+Python
+    |
+FastAPI
+    |
+Google Gemini AI
+    |
+HTML / CSS / JavaScript
+    |
+Jinja2
+    |
+JWT Authentication
+
+License
+
+This project can be distributed under the license selected by the project owner.
+
+Example:
+
+MIT License
+
+Project
+PocketSmart AI
+Your Smart Budget & Recommendation Assistant
+
+Built with FastAPI, Google Gemini, HTML, CSS, and JavaScript.
